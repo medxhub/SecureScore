@@ -1,0 +1,7 @@
+flask
+numpy
+sklearn
+scikit-learn
+pandas
+Flask-Login 
+Werkzeug

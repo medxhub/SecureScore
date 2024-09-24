@@ -1,0 +1,59 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ translations['applicants_title'] }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>{{ translations['applicants_title'] }}</h1>
+
+    <!-- Language Switcher -->
+    <div>
+        <a href="?lang=en">English</a> | <a href="?lang=fr">Français</a>
+    </div>
+
+    <!-- <h1>{{ translations['applicants_title'] }}</h1>-->
+    <table id="customers">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Marital Status</th>
+            <th>Education Level</th>
+            <th>Credit Score</th>
+            <th>Income</th>
+            <th>Debt to Income Ratio</th>
+            <th>Loan Amount</th>
+            <th>Loan to Value Ratio</th>
+            <th>Employment Years</th>
+            <th>Risk Score</th>
+            <th>Risk Level</th>
+            <th>Actions</th>
+        </tr>
+        {% for applicant in applicants %}
+        <tr>
+            <td>{{ applicant[0] }}</td>
+            <td>{{ applicant[1] }}</td>
+            <td>{{ applicant[2] }}</td>
+            <td>{{ applicant[3] }}</td>
+            <td>{{ applicant[4] }}</td>
+            <td>{{ applicant[5] }}</td>
+            <td>{{ applicant[6] }}</td>
+            <td>{{ applicant[7] }}</td>
+            <td>{{ applicant[8] }}</td>
+            <td>{{ applicant[9] }}</td>
+            <td>{{ applicant[10] }}</td>
+            <td>{{ applicant[11] }}</td>
+            <td>{{ applicant[12] }}</td>
+	    <td>
+		<a href="/export_data/{{ applicant[0] }}">Export</a>
+	        <a href="/delete_user/{{ applicant[0] }}">Delete</a>
+	    </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br><a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
+
