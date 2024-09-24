@@ -1,2 +1,2 @@
 # SecureScore
-credit scoring Flask application
+credit risk scoring Flask application
